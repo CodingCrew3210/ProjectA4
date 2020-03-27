@@ -19,7 +19,6 @@
 #include <stdlib.h>
 
 int main(int argc, char** argv) {
-    int id, numThreads;
 
     printf("\n");
     if (argc > 1) {
@@ -28,8 +27,8 @@ int main(int argc, char** argv) {
 
     #pragma omp parallel 
     {
-        id = omp_get_thread_num();
-        numThreads = omp_get_num_threads();
+		int id	= omp_get_thread_num();
+		int numThreads	= omp_get_num_threads();
         printf("Thread %d of %d is BEFORE the barrier.\n", id, numThreads);
 
     #pragma omp barrier 
