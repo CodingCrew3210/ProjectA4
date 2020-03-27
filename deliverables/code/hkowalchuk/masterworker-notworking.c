@@ -13,14 +13,13 @@
 #include <omp.h>     // OpenMP
 
 int main(int argc, char** argv) {
-    int id = -1, numThreads = -1;
 
     printf("\n");
 
 //    #pragma omp parallel
     {
-        id = omp_get_thread_num();
-        numThreads = omp_get_num_threads();
+		int id	= omp_get_thread_num();
+		int numThreads	= omp_get_num_threads();
 
         if ( id == 0 ) {  // thread with ID 0 is master
             printf("Greetings from the master, # %d of %d threads\n",
